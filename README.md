@@ -13,16 +13,22 @@
 | 参数          | 类型     | 描述                     | 默认值  |
 | ----------- | ------ | ---------------------- | ---- |
 | key   | string | 开放接口Key,在平台管理页面获取                     | 无，必填 |
+| device_type | string | 设备类型                   | 无，必填 |
+| device_id   | string | 设备ID                   | 无，必填    |
 | service | string | asr,nlp,tts                   | 无，必填 |
-| version   | string | 接口版本号                   | 空    |
+| version   | string | 接口版本号                   | 无，必填    |
 | time        | string | unix时间戳                | 无，必填 |
-| sign        | string | 由以上四项+secret按约定的加密方式生成 | 无，必填 |
+| sign        | string | 由以上几项+secret按约定的加密方式生成 | 无，必填 |
 
-secret由平台方按开发方的company_id，及device_type分配，由开发方保管，加密方式：
+sign的生成加密方式：
 
-key={key}&service={service}&version={version}&time={time}&secret={secret}的utf8字符串的md5值
+key={key}&device_type={device_type}&device_id={device_id}&service={service}&version={version}&time={time}&secret={secret}
+
+的utf8字符串的md5值
 
 其中{xxx}由xxx的值替代
+
+secret由平台方按开发方的company_id分配，由开发方保管
 
 ### Speech 接口
 
