@@ -12,7 +12,7 @@
 
 | 参数          | 类型     | 描述                     | 默认值  |
 | ----------- | ------ | ---------------------- | ---- |
-| key   | string | 开放接口Key,在平台管理页面获取                     | 无，必填 |
+| key   | string | 开放接口Key,在管理平台获取                     | 无，必填 |
 | device_type | string | 设备类型                   | 无，必填 |
 | device_id   | string | 设备ID                   | 无，必填    |
 | service | string | asr,nlp,tts                   | 无，必填 |
@@ -28,7 +28,7 @@ key={key}&device_type={device_type}&device_id={device_id}&service={service}&vers
 
 其中{xxx}由xxx的值替代
 
-secret由平台方按开发方的company_id分配，由开发方保管
+key及secret由开发方通过管理平台获取，并保管。
 
 ### Speech 接口
 
