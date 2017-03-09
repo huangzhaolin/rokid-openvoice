@@ -68,8 +68,7 @@ message AsrHeader {
 }
 
 message AsrResponse {
-  google.rpc.Status error = 1;
-  string asr              = 2;
+  string asr              = 1;
 }
 
 message NlpRequest {
@@ -84,8 +83,7 @@ message NlpHeader {
 }
 
 message NlpResponse {
-  google.rpc.Status error = 1;
-  string nlp              = 2;
+  string nlp              = 1;
 }
 
 message TtsRequest {
@@ -100,9 +98,8 @@ message TtsHeader {
 }
 
 message TtsResponse {
-  google.rpc.Status error = 1;
-  string text             = 2;
-  bytes voice             = 3;
+  string text             = 1;
+  bytes voice             = 2;
 }
 
 ```
@@ -129,7 +126,6 @@ message TtsResponse {
 
 | 参数    | 类型                | 描述                                       |
 | ----- | ----------------- | ---------------------------------------- |
-| error | google.rpc.Status | 参见grpc文档，如[c++](http://www.grpc.io/grpc/cpp/classgrpc_1_1_status.html)，[java](http://www.grpc.io/grpc-java/javadoc/io/grpc/Status.Code.html)。 |
 | asr   | string            | asr实时识别的结果                                 |
 
 #### NlpRequest
@@ -151,7 +147,6 @@ message TtsResponse {
 
 | 参数    | 类型                | 描述                                       |
 | ----- | ----------------- | ---------------------------------------- |
-| error | google.rpc.Status | 参见grpc文档，如[c++](http://www.grpc.io/grpc/cpp/classgrpc_1_1_status.html)，[java](http://www.grpc.io/grpc-java/javadoc/io/grpc/Status.Code.html)。 |
 | nlp   | string            | nlp识别的结果                                 |
 
 #### TtsRequest
@@ -174,7 +169,6 @@ message TtsResponse {
 
 | 参数    | 类型                | 描述                                       |
 | ----- | ----------------- | ---------------------------------------- |
-| error | google.rpc.Status | 参见grpc文档，如[c++](http://www.grpc.io/grpc/cpp/classgrpc_1_1_status.html)，[java](http://www.grpc.io/grpc-java/javadoc/io/grpc/Status.Code.html)。 |
 | text  | string            | voice语音中包含的文字                            |
 | voice | bytes             | 合成的voice语音                               |
 
