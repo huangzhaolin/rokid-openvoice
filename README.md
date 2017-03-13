@@ -13,7 +13,7 @@
 | 参数          | 类型     | 描述                     | 默认值  |
 | ----------- | ------ | ---------------------- | ---- |
 | key   | string | 开放接口Key,在管理平台获取                     | 无，必填 |
-| device_type | string | 设备类型                   | 无，必填 |
+| device_type_id | string | 设备类型ID                   | 无，必填 |
 | device_id   | string | 设备ID                   | 无，必填    |
 | service | string | asr,nlp,tts                   | 无，必填 |
 | version   | string | 接口版本号                   | 无，必填    |
@@ -22,7 +22,7 @@
 
 sign的生成加密方式：
 
-key={key}&device_type={device_type}&device_id={device_id}&service={service}&version={version}&time={time}&secret={secret}
+key={key}&device_type={device_type_id}&device_id={device_id}&service={service}&version={version}&time={time}&secret={secret}
 
 的utf8字符串的md5值
 
