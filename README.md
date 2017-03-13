@@ -22,7 +22,7 @@
 
 sign的生成加密方式：
 
-key={key}&device_type={device_type_id}&device_id={device_id}&service={service}&version={version}&time={time}&secret={secret}
+key={key}&device_type_id={device_type_id}&device_id={device_id}&service={service}&version={version}&time={time}&secret={secret}
 
 的utf8字符串的md5值
 
