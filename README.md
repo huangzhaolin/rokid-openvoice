@@ -46,17 +46,15 @@ key及secret由开发方通过管理平台获取，并保管。
 
 syntax = "proto3";
 
-package rokid.speech;
-
-import "google/rpc/status.proto";
+package rokid.open;
 
 service Speech {
   rpc asr(stream AsrRequest) returns (stream AsrResponse) { }
   rpc nlp(NlpRequest) returns (NlpResponse) { }
   rpc tts(TtsRequest) returns (stream TtsResponse) { }
 
-  // rpc speechv(stream VoiceSpeechRequest) returns (stream VoiceSpeechResponse) { }
-  // rpc speecht(TextSpeechRequest) returns (TextSpeechResponse) { }
+  rpc speechv(stream VoiceSpeechRequest) returns (stream VoiceSpeechResponse) { }
+  rpc speecht(TextSpeechRequest) returns (TextSpeechResponse) { }
 }
 
 
@@ -108,6 +106,58 @@ message TtsHeader {
 message TtsResponse {
   string text             = 1;
   bytes voice             = 2;
+}
+
+message VoiceSpeechRequest {
+  oneof request_content {
+    SpeechHeader header = 1;
+
+    bytes voice         = 2;
+  }
+}
+
+message VoiceSpeechResponse {
+    string asr              = 1;
+
+    string nlp              = 2;
+
+	string action           = 3;
+}
+
+message TextSpeechRequest {
+  SpeechHeader header = 1;
+
+  string asr          = 2;
+}
+
+message TextSpeechResponse {
+	string asr              = 1;
+
+    string nlp              = 2;
+
+	string action           = 3;
+}
+
+message SpeechHeader {
+	int32 id = 1;
+
+    // zh
+	// en
+	string language = 2;
+
+	// pcm
+	// opu
+	// opu2
+	string codec = 3;
+
+	// vt = voice trigger
+	string vt = 4;
+
+	// stack of current domains
+	string cdomain = 5;
+
+	// json format
+	string device = 6;
 }
 
 ```
