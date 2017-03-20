@@ -83,9 +83,9 @@ message NlpRequest {
 }
 
 message NlpHeader {
-	int32 id              = 1;
-	string lang           = 2;
-	string cdomain        = 3;
+  int32 id              = 1;
+  string lang           = 2;
+  string cdomain        = 3;
 }
 
 message NlpResponse {
@@ -98,9 +98,9 @@ message TtsRequest {
 }
 
 message TtsHeader {
-	int32 id              = 1;
-	string declaimer      = 2;
-	string codec          = 3;
+  int32 id              = 1;
+  string declaimer      = 2;
+  string codec          = 3;
 }
 
 message TtsResponse {
@@ -117,11 +117,11 @@ message VoiceSpeechRequest {
 }
 
 message VoiceSpeechResponse {
-    string asr              = 1;
+  string asr              = 1;
 
-    string nlp              = 2;
+  string nlp              = 2;
 
-	string action           = 3;
+  string action           = 3;
 }
 
 message TextSpeechRequest {
@@ -131,33 +131,33 @@ message TextSpeechRequest {
 }
 
 message TextSpeechResponse {
-	string asr              = 1;
+  string asr              = 1;
 
-    string nlp              = 2;
+  string nlp              = 2;
 
-	string action           = 3;
+  string action           = 3;
 }
 
 message SpeechHeader {
-	int32 id = 1;
+  int32 id = 1;
 
-    // zh
-	// en
-	string language = 2;
+  // zh
+  // en
+  string language = 2;
 
-	// pcm
-	// opu
-	// opu2
-	string codec = 3;
+  // pcm
+  // opu
+  // opu2
+  string codec = 3;
 
-	// vt = voice trigger
-	string vt = 4;
+  // vt = voice trigger
+  string vt = 4;
 
-	// stack of current domains
-	string cdomain = 5;
+  // stack of current domains
+  string cdomain = 5;
 
-	// json format
-	string device = 6;
+  // json format
+  string device = 6;
 }
 
 ```
