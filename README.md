@@ -49,14 +49,34 @@ syntax = "proto3";
 package rokid.open;
 
 service Speech {
+  rpc auth(AuthRequest) returns (AuthResponse) { }
+
   rpc asr(stream AsrRequest) returns (stream AsrResponse) { }
+
   rpc nlp(NlpRequest) returns (NlpResponse) { }
+
   rpc tts(TtsRequest) returns (stream TtsResponse) { }
 
   rpc speechv(stream VoiceSpeechRequest) returns (stream VoiceSpeechResponse) { }
+
   rpc speecht(TextSpeechRequest) returns (TextSpeechResponse) { }
 }
 
+message AuthRequest {
+  string key              = 1;
+  string device_type      = 2;
+  string device_id        = 3;
+  string service          = 4;
+  string version          = 5;
+  string timestamp        = 6;
+  string sign             = 7;
+}
+
+message AuthResponse {
+  // 0: success
+  // -1: failed
+  int32 result;
+}
 
 message AsrRequest {
   oneof request_content {
