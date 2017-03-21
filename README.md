@@ -75,7 +75,7 @@ message AuthRequest {
 message AuthResponse {
   // 0: success
   // -1: failed
-  int32 result;
+  int32 result            = 1;
 }
 
 message AsrRequest {
