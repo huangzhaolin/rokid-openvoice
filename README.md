@@ -57,9 +57,9 @@ service Speech {
 
   rpc tts(TtsRequest) returns (stream TtsResponse) { }
 
-  rpc speechv(stream VoiceSpeechRequest) returns (stream VoiceSpeechResponse) { }
+  rpc speechv(stream VoiceSpeechRequest) returns (stream SpeechResponse) { }
 
-  rpc speecht(TextSpeechRequest) returns (TextSpeechResponse) { }
+  rpc speecht(TextSpeechRequest) returns (SpeechResponse) { }
 }
 
 message AuthRequest {
@@ -136,7 +136,7 @@ message VoiceSpeechRequest {
   }
 }
 
-message VoiceSpeechResponse {
+message SpeechResponse {
   string asr              = 1;
 
   string nlp              = 2;
@@ -150,20 +150,12 @@ message TextSpeechRequest {
   string asr          = 2;
 }
 
-message TextSpeechResponse {
-  string asr              = 1;
-
-  string nlp              = 2;
-
-  string action           = 3;
-}
-
 message SpeechHeader {
   int32 id = 1;
 
   // zh
   // en
-  string language = 2;
+  string lang = 2;
 
   // pcm
   // opu
