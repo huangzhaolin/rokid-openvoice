@@ -176,9 +176,10 @@ message SpeechHeader {
 
 ### AsrRequest
 
-一个请求一个AsrRequest{AsrHeader}后跟多个AsrRequest{voice}。
+一个请求一个AsrRequest{AsrHeader}后跟多个AsrRequest{voice}。PCM为
+RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 16000 Hz语音。
 
-| 参数          | 类型     | 描述                                       | 默认值   |
+| 参数          | 类型     | 描述                                       | 默认值   |
 | ----------- | ------ | ---------------------------------------- | ----- |
 | header        | AsrHeader | 帮助识别voice语音流的参数配置                  | 无 |
 | voice        | bytes | 需要识别的voice语音流                  | 无 |
