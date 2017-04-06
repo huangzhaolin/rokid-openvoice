@@ -1,9 +1,11 @@
 ##编译
+
 git clone git@github.com:Rokid/rokid-openvoice.git
 cd rokid-openvoice/sample-code-golang
 make
 
 ##认证
+
 修改src/auth/credentials.go中认证信息:
 15     key            = "PLEASE_FIX_IT"
 16     device_type_id = "PLEASE_FIX_IT"
@@ -12,6 +14,7 @@ make
 
 
 ##运行
+
 $ ./asrclient -tls -auth -file zhrmghg.pcm
 2017/04/06 20:05:06.634021 main.go:84: Read file(9600)
 2017/04/06 20:05:06.934236 main.go:84: Read file(9600)
@@ -50,6 +53,7 @@ $ ./speechvclient -tls -auth -file zhrmghg.pcm
 2017/04/06 20:10:30.860197 main.go:68: Got asr: asr(中华人民共和国), nlp({"cloud":false,"confidence":0,"domain":"ROKID.EXCEPTION.NLP","intent":"NO_NLP","posEnd":0,"posStart":0,"slots":{},"voice":"中华人民共和国"}), action({"response":{"action":{"shoudEndSession":true,"type":"NORMAL","version":"2.0.0","voice":{"behaviour":"APPEND","item":{"tts":"未命中语音指令"},"needEventCallback":false}},"domain":"ROKID.EXCEPTION.NLP","resType":"INTENT","shot":"CUT"},"version":"2.0.0"})
 
 ##测试
+
 $ go test -v asrclient
 === RUN   TestAsr
 2017/04/06 20:00:11 Read file(9600)
