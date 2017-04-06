@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	host    = flag.String("host", "service-gw.rpc.rokid.com:30000", "Server address")
+	host    = flag.String("host", "apigw.open.rokid.com:443", "Server address")
 	lang    = flag.String("lang", "zh", "Language")
 	text    = flag.String("text", "", "Text")
 	cdomain = flag.String("cdomain", "", "Current domain")

@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	host   = flag.String("host", "service-gw.rpc.rokid.com:30000", "Server address")
+	host   = flag.String("host", "apigw.open.rokid.com:443", "Server address")
 	lang   = flag.String("lang", "zh", "Language")
 	codec  = flag.String("codec", "opu2", "Codec")
 	text   = flag.String("text", "今天天气怎么样?", "Tts Text")
