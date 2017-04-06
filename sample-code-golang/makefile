@@ -5,6 +5,7 @@ all: pre $(target)
 pre: src/pb/speech.pb.go
 
 src/pb/speech.pb.go: src/pb/speech.proto
+	go get $(target)
 	cd src/pb; protoc --go_out=plugins=grpc:. *.proto
 
 ttsclient:
