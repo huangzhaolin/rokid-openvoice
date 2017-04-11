@@ -199,6 +199,8 @@ key及secret由开发方通过管理平台获取，并保管。
 
 ### AuthResponse
 
+请求响应参数详见：[golang代码例子](https://github.com/Rokid/rokid-openvoice/blob/master/sample-code-golang/src/auth/credentials.go)
+
 | 参数     | 类型    | 描述                |
 | ------ | ----- | ----------------- |
 | result | int32 | 认证结果(成功:0, 失败:-1) |
@@ -207,6 +209,8 @@ key及secret由开发方通过管理平台获取，并保管。
 
 一个请求一个AsrRequest{AsrHeader}后跟多个AsrRequest{voice}。PCM为
 RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 16000 Hz语音。
+
+请求响应参数详见：[golang代码例子](https://github.com/Rokid/rokid-openvoice/blob/master/sample-code-golang/src/asrclient/main.go)
 
 | 参数     | 类型        | 描述                | 默认值  |
 | ------ | --------- | ----------------- | ---- |
@@ -230,6 +234,8 @@ RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 16000 Hz语�
 
 ### NlpRequest
 
+请求响应参数详见：[golang代码例子](https://github.com/Rokid/rokid-openvoice/blob/master/sample-code-golang/src/nlpclient/main.go)
+
 | 参数     | 类型        | 描述                     | 默认值  |
 | ------ | --------- | ---------------------- | ---- |
 | header | NlpHeader | 帮助识别voice语音流的NlpHeader | 无    |
@@ -251,6 +257,8 @@ RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 16000 Hz语�
 
 ### TtsRequest
 
+请求响应参数详见：[golang代码例子](https://github.com/Rokid/rokid-openvoice/blob/master/sample-code-golang/src/ttsclient/main.go)
+
 | 参数     | 类型        | 描述                   | 默认值  |
 | ------ | --------- | -------------------- | ---- |
 | header | TtsHeader | 配置如何将text转换成voice语音流 | 无    |
@@ -258,6 +266,7 @@ RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 16000 Hz语�
 
 
 ### TtsHeader
+
 PCM格式为 RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 24000 Hz语音。
 注意，这里的PCM与Asr的PCM格式不一致，因此不能将tts的输出直接作为asr的输入。
 
@@ -276,12 +285,16 @@ PCM格式为 RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 
 
 ### VoiceSpeechRequest
 
+请求响应参数详见：[golang代码例子](https://github.com/Rokid/rokid-openvoice/blob/master/sample-code-golang/src/speechvclient/main.go)
+
 | 参数     | 类型        | 描述                   | 默认值  |
 | ------ | --------- | -------------------- | ---- |
 | header | TtsHeader | 配置如何将text转换成voice语音流 | 无    |
 | voice  | bytes     | 需要识别的voice语音流        | 无    |
 
-### TexeSpeechRequest
+### TextSpeechRequest
+
+请求响应参数详见：[golang代码例子](https://github.com/Rokid/rokid-openvoice/blob/master/sample-code-golang/src/speechtclient/main.go)
 
 | 参数     | 类型        | 描述                   | 默认值  |
 | ------ | --------- | -------------------- | ---- |
