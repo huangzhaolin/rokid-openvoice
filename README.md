@@ -3,7 +3,7 @@
 
 > 文档版本:V0.2
 
-Rokid openvoice开放服务包含以下四部分功能，**将于17年4月1日后开放内测，目前仅提供协议参考**。
+Rokid openvoice开放服务包含以下四部分功能，
 
 - 设备认证
 - 语音转文字（ASR）
@@ -64,7 +64,7 @@ service Speech {
 
 message AuthRequest {
   string key              = 1;
-  string device_type      = 2;
+  string device_type_id   = 2;
   string device_id        = 3;
   string service          = 4;
   string version          = 5;
@@ -205,7 +205,8 @@ key及secret由开发方通过管理平台获取，并保管。
 
 ### AsrRequest
 
-一个请求一个AsrRequest{AsrHeader}后跟多个AsrRequest{voice}。
+一个请求一个AsrRequest{AsrHeader}后跟多个AsrRequest{voice}。PCM为
+RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 16000 Hz语音。
 
 | 参数     | 类型        | 描述                | 默认值  |
 | ------ | --------- | ----------------- | ---- |
