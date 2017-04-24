@@ -22,7 +22,7 @@ Rokid openvoice开放服务包含以下四部分功能，
 | -------------- | ------ | ---------------------- | ---- |
 | key            | string | 开放接口Key,在管理平台获取        | 无，必填 |
 | device_type_id | string | 设备类型ID                 | 无，必填 |
-| device_id      | string | 设备ID                   | 无，必填 |
+| device_id      | string | 设备ID                   | 无，必填，设备ID只能由6~15位的字母和数字组成，不能含有空格和特殊符号。由开发者自己生成管理，用于标志每个设备的唯一性。 |
 | service        | string | asr,nlp,tts            | 无，必填 |
 | version        | string | 接口版本号                  | 无，必填 |
 | time           | string | unix时间戳                | 无，必填 |
